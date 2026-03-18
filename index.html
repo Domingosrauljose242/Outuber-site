@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outuber — Baixe qualquer vídeo</title>
+  <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-icon"></div>
+    Outuber
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#features" onclick="closeMenu()">Recursos</a></li>
+    <li><a href="#preview" onclick="closeMenu()">App</a></li>
+    <li><a href="#download" onclick="closeMenu()">Download</a></li>
+  </ul>
+  <a href="#download" class="nav-cta">Baixar Grátis</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="hero-badge">
+    <div class="badge-dot"></div>
+    Versão 1.0 Beta disponível agora
+  </div>
+
+  <h1>Baixe qualquer vídeo <span>instantaneamente</span></h1>
+  <p class="hero-sub">O app desktop mais rápido para baixar vídeos em alta qualidade. Suporte a 4K, múltiplos formatos e milhares de plataformas.</p>
+
+  <div class="search-wrap">
+    <!--Barra de download para o futuro
+    <div class="search-bar">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#6a89b0" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Cole uma URL ou pesquise um vídeo..." id="heroInput"/>
+      <button class="search-btn" onclick="handleSearch()">Baixar ↓</button>
+    </div>
+    -->
+    <div class="platforms">
+      <span>Suporta:</span>
+      <span class="plat-tag">YouTube</span>
+      <span class="plat-tag">Vimeo</span>
+      <span class="plat-tag">Twitter/X</span>
+      <span class="plat-tag">Instagram</span>
+      <span class="plat-tag">+1000 sites</span>
+    </div>
+    
+  </div>
+</section>
+
+<div class="stats-section">
+  <div class="stats-grid">
+  <!-- Numero de downloads
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="12" data-suffix="M+">0</div>
+      <div class="stat-label">Milhões de downloads</div>
+    </div>
+    -->
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="1000" data-suffix="+">0</div>
+      <div class="stat-label">Plataformas suportadas</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="4" data-suffix="K">0</div>
+      <div class="stat-label">Resolução máxima</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="99" data-suffix="%">0</div>
+      <div class="stat-label">Satisfação dos usuários</div>
+    </div>
+  </div>
+</div>
+
+<section id="preview">
+  <!--
+  <div class="preview-section">
+    <div style="text-align:center">
+      <div class="section-label">Interface do App</div>
+      <h2 class="section-title" style="text-align:center;margin:0 auto">Design <span>limpo</span> e poderoso</h2>
+    </div>
+
+    <div class="app-window reveal">
+      <div class="win-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="win-title">Outuber — Início</span>
+      </div>
+      <div class="win-body">
+        <div class="win-sidebar">
+          <div class="win-sidebar-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            Início
+          </div>
+          <div class="win-sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Downloads
+          </div>
+          <div class="win-sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+            Configurações
+          </div>
+        </div>
+        <div class="win-content">
+          <div class="win-search">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6a89b0" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Pesquisar vídeos ou colar URL...
+          </div>
+          <div class="win-section-label">Em Alta</div>
+          <div class="win-cards">
+            <div class="win-card">
+              <div class="win-thumb" style="background:linear-gradient(135deg,#0d1f3c,#1a4080)">
+                🌿
+                <span class="win-thumb-badge">10:05</span>
+              </div>
+              <div class="win-card-info">
+                <div class="win-card-title">Natureza Incrível 4K</div>
+                <div class="win-card-sub">Canal Natureza • 1.2M visualizações</div>
+                <button class="win-dl-btn">↓ Baixar</button>
+              </div>
+            </div>
+            <div class="win-card">
+              <div class="win-thumb" style="background:linear-gradient(135deg,#0a2535,#0d4060)">
+                💻
+                <span class="win-thumb-badge">05:20</span>
+              </div>
+              <div class="win-card-info">
+                <div class="win-card-title">Tutorial de Programação</div>
+                <div class="win-card-sub">Dev Master • 500k visualizações</div>
+                <button class="win-dl-btn">↓ Baixar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  <div style="text-align:center; margin-bottom: 50px;">
+    <div class="section-label">Interface do App</div>
+    <h2 class="section-title" style="text-align:center;margin:0 auto">Design <span>limpo</span> e poderoso</h2>
+  </div>
+  <div class="interface reveal">
+
+  </div>
+</section>
+
+<section id="features">
+  <div class="section-label">Recursos</div>
+  <h2 class="section-title">Tudo que você precisa para <span>baixar</span></h2>
+  <div class="features-grid">
+    <div class="feat-card reveal">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Velocidade Máxima</div>
+      <div class="feat-desc">Baixe vídeos em segundos com nosso motor de download otimizado para conexões lentas e rápidas.</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">🎬</div>
+      <div class="feat-title">Qualidade 4K</div>
+      <div class="feat-desc">Suporte completo a resoluções de 144p até 4K HDR. Escolha a qualidade certa para cada situação.</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">🎵</div>
+      <div class="feat-title">Extração de Áudio</div>
+      <div class="feat-desc">Extraia o áudio de qualquer vídeo em MP3, WAV ou AAC com um único clique.</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">📋</div>
+      <div class="feat-title">Baixar em Lote</div>
+      <div class="feat-desc">Adicione playlists inteiras ou múltiplas URLs de uma vez e deixe o app trabalhar por você.</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">🌐</div>
+      <div class="feat-title">+40 Plataformas</div>
+      <div class="feat-desc">YouTube, Vimeo, Twitter, Instagram, TikTok e muito mais. Se existe online, conseguimos baixar.</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Seguro</div>
+      <div class="feat-desc">Sem anúncios, sem adware, sem rastreamento. Apenas um app limpo e focado no que importa.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="section-label">Download Grátis</div>
+  <h2>Comece a baixar <span style="background:linear-gradient(135deg,var(--blue),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">agora mesmo</span></h2>
+  <p>Disponível para Windows, macOS e Linux. Instalação em menos de 1 minuto, sem cadastro necessário.</p>
+  <div class="btn-group">
+    <a href="#" class="btn-primary">⬇ Baixar para Windows</a>
+    <a href="#" class="btn-ghost">Ver no Uptodown</a>
+  </div>
+  <div class="os-badges">
+    <div class="os-badge">🪟 Windows 10/11</div>
+    <div class="os-badge">🍎 macOS 12+</div>
+    <div class="os-badge">🐧 Linux</div>
+  </div>
+</section>
+
+<footer>
+  <a class="logo" href="#">
+    <div class="logo-icon"></div>
+    Outuber
+  </a>
+  <span class="footer-copy">© 2026 Outuber. Todos os direitos reservados.</span>
+  <div class="footer-links">
+    <a href="#">Termos</a>
+    <a href="#">Privacidade</a>
+    <a href="#">Suporte</a>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
